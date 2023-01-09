@@ -28,7 +28,7 @@ namespace Taller78
             string bd = "BDBANCO";
 
             string cadenaConexion = "server= localhost;" + "port=" + textpuerto.Text + ";" +
-                "user id= postgres;" + "password=" + textpass.Text + ";" + "database=" + bd + ";";
+             "user id=" + textusuario.Text + ";" + "password=" + textpass.Text + ";" + "database=" + bd + ";";
             NpgsqlConnection conn = new NpgsqlConnection();
             conn.ConnectionString = cadenaConexion;
             conn.Open();
@@ -107,6 +107,16 @@ namespace Taller78
             }
 
             conn.Close();
+        }
+
+        private void textpass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
