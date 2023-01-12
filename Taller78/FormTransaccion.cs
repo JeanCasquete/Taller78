@@ -54,11 +54,11 @@ namespace Taller78
         private void buttonTransaccionMala_Click(object sender, EventArgs e)
         {
             Transacciones transacciones = new Transacciones();
-            transacciones.IngresarNoTransaccional(textpuerto.Text, textpass.Text, Convert.ToInt32(textorigen.Text), Convert.ToInt32(textdestino.Text), Convert.ToInt32(textValor.Text));
+            transacciones.IngresarNoTransaccional(textpuerto.Text, textpass.Text, Convert.ToInt32(textorigen.Text), Convert.ToInt32(textdestino.Text), Convert.ToInt32(textValor.Text), textusuario.Text);
             string bd = "BDBANCO";
 
             string cadenaConexion = "server= localhost;" + "port=" + textpuerto.Text + ";" +
-                "user id= postgres;" + "password=" + textpass.Text + ";" + "database=" + bd + ";";
+                "user id=" + textusuario.Text + ";" + "password=" + textpass.Text + ";" + "database=" + bd + ";";
             NpgsqlConnection conn = new NpgsqlConnection();
             conn.ConnectionString = cadenaConexion;
             conn.Open();
@@ -83,11 +83,11 @@ namespace Taller78
         private void buttonTransaccionBuena_Click(object sender, EventArgs e)
         {
             Transacciones transacciones = new Transacciones();
-            transacciones.IngresarTransaccional(textpuerto.Text, textpass.Text, Convert.ToInt32(textorigen.Text), Convert.ToInt32(textdestino.Text), Convert.ToInt32(textValor.Text));
+            transacciones.IngresarTransaccional(textpuerto.Text, textpass.Text, Convert.ToInt32(textorigen.Text), Convert.ToInt32(textdestino.Text), Convert.ToInt32(textValor.Text), textusuario.Text);
             string bd = "BDBANCO";
 
             string cadenaConexion = "server= localhost;" + "port=" + textpuerto.Text + ";" +
-                "user id= postgres;" + "password=" + textpass.Text + ";" + "database=" + bd + ";";
+                 "user id=" + textusuario.Text + ";" + "password=" + textpass.Text + ";" + "database=" + bd + ";";
             NpgsqlConnection conn = new NpgsqlConnection();
             conn.ConnectionString = cadenaConexion;
             conn.Open();

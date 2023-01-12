@@ -10,12 +10,12 @@ namespace Taller78
 {
     class Transacciones
     {
-        public void IngresarNoTransaccional(string puerto, string pass, int origen, int destino, int valor)
+        public void IngresarNoTransaccional(string puerto, string pass, int origen, int destino, int valor, string usuario)
         {
             string bd = "BDBANCO";
 
             string cadenaConexion = "server= localhost;" + "port=" + puerto + ";" +
-                "user id= postgres;" + "password=" + pass + ";" + "database=" + bd + ";";
+                 "user id=" + usuario + ";" + "password=" + pass + ";" + "database=" + bd + ";";
             NpgsqlConnection conn = new NpgsqlConnection();
 
             string query = "PA_INSERTAR_NO_TRANSACCIONAL";
@@ -40,12 +40,12 @@ namespace Taller78
 
         }
 
-        public void IngresarTransaccional(string puerto, string pass, int origen, int destino, int valor)
+        public void IngresarTransaccional(string puerto, string pass, int origen, int destino, int valor, string usuario)
         {
             string bd = "BDBANCO";
 
             string cadenaConexion = "server= localhost;" + "port=" + puerto + ";" +
-                "user id= postgres;" + "password=" + pass + ";" + "database=" + bd + ";";
+                 "user id=" + usuario + ";" + "password=" + pass + ";" + "database=" + bd + ";";
             NpgsqlConnection conn = new NpgsqlConnection();
 
             string query = "PA_INSERTAR_TRANSACCIONAL";
